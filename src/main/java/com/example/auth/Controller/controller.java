@@ -31,7 +31,9 @@ public class controller {
     @GetMapping
     public ResponseEntity<?> getAllUsers() throws JsonProcessingException {
         String validation = this.restTemplate.callGetAllUsers();
-        if (validation == "true"){
+        System.out.println(validation);
+        if ("true".equals(validation)){
+            System.out.println(validation);
             String result = "Success!";
             successResponse s = new successResponse(result, this.userRepository.findAll());
             return ResponseEntity.ok().body(s);

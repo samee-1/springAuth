@@ -60,7 +60,6 @@ public class restTemplate {
         JsonNode js = objectMapper.readTree(UmsRes);
 
         String success = js.get("success").toString();
-        System.out.println(success);
         return success;
 //        if( success == "true"){
 //            return "Success!";
